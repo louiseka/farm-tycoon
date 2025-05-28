@@ -30,7 +30,6 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      <h1> Farm Tycoon</h1>
     </>
   )
 }

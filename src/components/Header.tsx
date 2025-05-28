@@ -3,7 +3,7 @@ import { NavLink } from "react-router"
 export default function Header() {
     return (
         <header>
-            <h1>Header</h1>
+            <h1> Farm Tycoon</h1>
             <nav>
                 <NavLink to="/">Dashboard</NavLink>
                 <NavLink to="/shop">Shop</NavLink>
