@@ -1,0 +1,46 @@
+html {
+    box-sizing: border-box;
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #f5f5f5;
+
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    text-align: center;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+nav a {
+    color: #17141F;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: #ddd;
+    width: auto;
+    padding: 0.5em 1em 0.5em 0.5em;
+    border-radius: 5px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-icon {
+    max-width: 50px;
+    margin-top: -30px;
+    display: block;
+
+}
