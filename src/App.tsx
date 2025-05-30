@@ -12,9 +12,22 @@ import ShopLayout from "./components/ShopLayout"
 import ShopAnimals from "./pages/Shop/ShopAnimals"
 import ShopCrops from "./pages/Shop/ShopCrops"
 
-
-
 function App() {
+
+  type Crop = {
+    name: string,
+    buyPrice: number,
+    sellPrice: number,
+    alt: string
+  }
+
+  type Animal = {
+    name: string,
+    buyPrice: number,
+    sellPrice: number,
+    alt: string,
+    produce: string
+  }
 
   return (
     <>
