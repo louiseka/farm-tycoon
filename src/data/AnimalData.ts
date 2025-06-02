@@ -1,4 +1,6 @@
-export const animalData = [{
+import type { Animal } from "../types/farmTypes"
+
+export const animalData: Animal[] = [{
     name: "Chicken",
     buyPrice: 200,
     sellPrice: 400,

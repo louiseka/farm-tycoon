@@ -1,4 +1,6 @@
-export const cropData = [{
+import type { Crop } from "../types/farmTypes"
+
+export const cropData: Crop[] = [{
     name: "Wheat",
     buyPrice: 25,
     sellPrice: 75,
