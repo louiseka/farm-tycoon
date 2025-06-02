@@ -18,6 +18,7 @@ function App() {
     name: string,
     buyPrice: number,
     sellPrice: number,
+    img: string,
     alt: string
   }
 
@@ -25,6 +26,7 @@ function App() {
     name: string,
     buyPrice: number,
     sellPrice: number,
+    img: string,
     alt: string,
     produce: string
   }
