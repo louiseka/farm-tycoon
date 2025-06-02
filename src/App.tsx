@@ -13,24 +13,6 @@ import ShopAnimals from "./pages/Shop/ShopAnimals"
 import ShopCrops from "./pages/Shop/ShopCrops"
 
 function App() {
-
-  type Crop = {
-    name: string,
-    buyPrice: number,
-    sellPrice: number,
-    img: string,
-    alt: string
-  }
-
-  type Animal = {
-    name: string,
-    buyPrice: number,
-    sellPrice: number,
-    img: string,
-    alt: string,
-    produce: string
-  }
-
   return (
     <>
       <BrowserRouter>
