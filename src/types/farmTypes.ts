@@ -7,6 +7,7 @@ export type Crop = {
 }
 
 export type Animal = {
+    id: number,
     name: string,
     buyPrice: number,
     sellPrice: number,
