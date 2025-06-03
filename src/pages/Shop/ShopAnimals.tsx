@@ -3,7 +3,6 @@ import { animalData } from "../../data/AnimalData"
 
 
 export default function ShopAnimals() {
-    console.log(animalData)
 
     const animalGrid = animalData.map((animal) => (
         <div key={animal.id} className="shop-card">
@@ -21,7 +20,7 @@ export default function ShopAnimals() {
             <div className="shop-grid">
                 {animalGrid}
                 {Array.from({ length: 15 - animalData.length }).map((_, i) => (
-                    <div key={`empty-${i}`} className="animal-card empty-slot"></div>
+                    <div key={`empty-${i}`} className="shop-card empty-slot"></div>
                 ))}
             </div>
         </section>
