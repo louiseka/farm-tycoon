@@ -1,4 +1,5 @@
 export type Crop = {
+    id: number,
     name: string,
     buyPrice: number,
     sellPrice: number,
