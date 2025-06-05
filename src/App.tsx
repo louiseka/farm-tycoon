@@ -1,7 +1,6 @@
-import { Routes, Route, BrowserRouter } from "react-router"
+import { Routes, Route, BrowserRouter, Navigate } from "react-router"
 
 import Dashboard from "./pages/Dashboard"
-import Shop from "./pages/Shop/Shop"
 import Farm from "./pages/Farm/Farm"
 import Crops from "./pages/Farm/FarmCrops"
 import Animals from "./pages/Farm/FarmAnimals"
@@ -20,7 +19,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Dashboard />} />
             <Route path="shop" element={<ShopLayout />}>
-              <Route index element={<Shop />} />
+              <Route index element={<Navigate to="crops" replace />} />
               <Route path="crops" element={<ShopCrops />} />
               <Route path="animals" element={<ShopAnimals />} />
             </Route>
