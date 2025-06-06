@@ -1,14 +1,18 @@
 import "/src/styles/shop.css"
 import { cropData } from "../../data/CropData"
+import type { Crop } from "../../types/farmTypes"
 
-export default function ShopCrops() {
+type ShopCropsProps = {
+    buyShopItem: (item: Crop) => void
+}
+
+export default function ShopCrops({ buyShopItem }: ShopCropsProps) {
 
     const cropGrid = cropData.map((crop) => (
         <div key={crop.id} className="shop-card">
             <h3>{crop.name}</h3>
-            <img className="shop-icon" src={crop.img} alt={crop.alt}></img>
+            <button className="shop-btn" onClick={() => buyShopItem(crop)}><img className="shop-icon" src={crop.img} alt={crop.alt}></img></button>
             <p className="price-container"><span><img className="icon" src="/assets/coin.svg"></img></span>£{crop.sellPrice}</p>
-
         </div>
     ))
 
