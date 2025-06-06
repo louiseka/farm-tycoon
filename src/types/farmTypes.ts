@@ -16,3 +16,7 @@ export type Animal = {
     alt: string,
     produce: string
 }
+
+export type Order = Crop | Animal
+
+export type Coin = number
