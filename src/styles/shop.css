@@ -12,6 +12,11 @@
     /* add farm background */
 }
 
+.shop-btn {
+    border: none;
+}
+
+
 .shop-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

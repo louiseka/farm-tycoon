@@ -1,4 +1,6 @@
 import { Routes, Route, BrowserRouter, Navigate } from "react-router"
+import { useState } from "react"
+import type { Coin, Order, Crop, Animal } from "./types/farmTypes"
 
 import Dashboard from "./pages/Dashboard"
 import Crops from "./pages/Farm/FarmCrops"
@@ -11,6 +13,16 @@ import ShopAnimals from "./pages/Shop/ShopAnimals"
 import ShopCrops from "./pages/Shop/ShopCrops"
 
 function App() {
+
+  const [farm, setFarm] = useState<(Crop | Animal)[]>([])
+  const [coins, setCoins] = useState(5000)
+
+  function buyShopItem(item: Crop | Animal) {
+    setFarm(prevFarm => [...prevFarm, item])
+    setCoins(prevCoins => prevCoins - item.sellPrice)
+  }
+
+
   return (
     <>
       <BrowserRouter>
@@ -19,8 +31,8 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="shop" element={<ShopLayout />}>
               <Route index element={<Navigate to="crops" replace />} />
-              <Route path="crops" element={<ShopCrops />} />
-              <Route path="animals" element={<ShopAnimals />} />
+              <Route path="crops" element={<ShopCrops buyShopItem={buyShopItem} />} />
+              <Route path="animals" element={<ShopAnimals buyShopItem={buyShopItem} />} />
             </Route>
             <Route path="farm" element={<FarmLayout />}>
               <Route index element={<Navigate to="crops" replace />} />
