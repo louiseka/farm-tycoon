@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter, Navigate } from "react-router"
 import { useState } from "react"
 import type { Coin, Order, Crop, Animal } from "./types/farmTypes"
-import { isAnimal, isCrop } from "./utils/typeguard"
+import { isAnimal, isCrop } from "./utils/typeGuard"
 
 import Dashboard from "./pages/Dashboard"
 import FarmCrops from "./pages/Farm/FarmCrops"
