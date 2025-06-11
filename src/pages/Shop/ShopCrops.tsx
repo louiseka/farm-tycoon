@@ -12,7 +12,7 @@ export default function ShopCrops({ buyShopItem }: ShopCropsProps) {
         <div key={crop.id} className="shop-card">
             <h3>{crop.name}</h3>
             <button className="shop-btn" onClick={() => buyShopItem(crop)}><img className="shop-icon" src={crop.img} alt={crop.alt}></img></button>
-            <p className="price-container"><span><img className="icon" src="/assets/coin.svg"></img></span>£{crop.sellPrice}</p>
+            <p className="price-container"><span><img className="icon" src="/assets/Icons/coin.svg"></img></span>£{crop.sellPrice}</p>
         </div>
     ))
 
