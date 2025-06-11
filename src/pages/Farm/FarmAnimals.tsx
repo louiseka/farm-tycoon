@@ -1,5 +1,31 @@
-export default function Animals() {
+import "/src/styles/farm.css"
+import type { Animal } from "../../types/farmTypes"
+
+type FarmAnimalProps = {
+    farmData: Animal[]
+}
+
+export default function FarmAnimals({ farmData }: FarmAnimalProps) {
+
+    console.log(farmData)
+    const animalGrid = farmData.map((animal) => (
+        <div key={animal.id} className="farm-card">
+            <h3>{animal.name}</h3>
+            <img src={animal.img} alt={animal.alt}></img>
+        </div>
+    ))
+
+
     return (
-        <h1>Animals</h1>
+        <section className="farm-section">
+            <h2>Your Farm Animals</h2>
+            <div className="farm-grid">
+                {animalGrid}
+                {Array.from({ length: 15 - farmData.length }).map((_, i) => (
+                    <div key={`empty-${i}`} className="farm-card empty-slot"></div>
+                ))}
+            </div>
+
+        </section>
     )
 }
