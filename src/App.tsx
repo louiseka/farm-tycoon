@@ -1,10 +1,11 @@
 import { Routes, Route, BrowserRouter, Navigate } from "react-router"
 import { useState } from "react"
 import type { Coin, Order, Crop, Animal } from "./types/farmTypes"
+import { isAnimal, isCrop } from "./utils/typeguard"
 
 import Dashboard from "./pages/Dashboard"
-import Crops from "./pages/Farm/FarmCrops"
-import Animals from "./pages/Farm/FarmAnimals"
+import FarmCrops from "./pages/Farm/FarmCrops"
+import FarmAnimals from "./pages/Farm/FarmAnimals"
 import Stats from "./pages/Stats"
 import Layout from "./components/Layout"
 import FarmLayout from "./components/FarmLayout"
@@ -36,8 +37,8 @@ function App() {
             </Route>
             <Route path="farm" element={<FarmLayout />}>
               <Route index element={<Navigate to="crops" replace />} />
-              <Route path="crops" element={<Crops />} />
-              <Route path="animals" element={<Animals />} />
+              <Route path="crops" element={<FarmCrops farmData={farm.filter(isCrop)} />} />
+              <Route path="animals" element={<FarmAnimals farmData={farm.filter(isAnimal)} />} />
             </Route>
             <Route path="stats" element={<Stats />} />
           </Route>

@@ -11,7 +11,7 @@ export default function ShopAnimals({ buyShopItem }: ShopAnimalProps) {
     const animalGrid = animalData.map((animal) => (
         <div key={animal.id} className="shop-card">
             <h3>{animal.name}</h3>
-            <button className="shop-btn" onClick={() => buyShopItem(animal)}><img className="shop-icon" src={animal.img} alt={animal.alt}></img></button>
+            <button className="shop-btn" onClick={() => buyShopItem(animal)}><img src={animal.img} alt={animal.alt}></img></button>
             <p className="price-container"><span><img className="icon" src="/assets/coin.svg"></img></span>£{animal.sellPrice}</p>
         </div>
     ))
