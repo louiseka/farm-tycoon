@@ -1,0 +1,25 @@
+.side-nav {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0.8em;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    top: 100px;
+    left: 0;
+    overflow-x: hidden;
+    border-radius: 8px;
+    margin: 0 40px
+}
+
+
+@media (min-width: 1024px) {
+    .side-nav {
+        flex-direction: column;
+        height: 90%;
+        width: 350px;
+        padding: 1em 2em;
+        position: fixed
+    }
+}

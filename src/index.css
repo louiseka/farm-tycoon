@@ -29,6 +29,10 @@ button:active {
     background-color: red;
 }
 
+header {
+    padding: 120px 0 0;
+}
+
 nav {
     display: flex;
     align-items: center;

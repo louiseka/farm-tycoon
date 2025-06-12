@@ -1,5 +1,8 @@
 import { Routes, Route, BrowserRouter, Navigate } from "react-router"
 import { useState } from "react"
+
+import "./styles/sidenav.css"
+
 import type { Coin, Order, Crop, Animal } from "./types/farmTypes"
 import { isAnimal, isCrop } from "./utils/typeGuard"
 
@@ -26,6 +29,8 @@ function App() {
 
   return (
     <>
+
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
