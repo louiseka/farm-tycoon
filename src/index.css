@@ -33,7 +33,7 @@ header {
     padding: 120px 0 0;
 }
 
-nav {
+.main-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,7 +43,16 @@ nav {
     margin: 0 auto;
 }
 
-nav a {
+.nested-nav {
+    display: flex;
+    font-size: 1.25em;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.main-nav a,
+.nested-nav a {
     color: #17141F;
     text-decoration: none;
     font-weight: 500;
@@ -56,9 +65,17 @@ nav a {
     align-items: center;
 }
 
+.nested-nav a {
+    margin: 1em 0 0.5em;
+}
+
+.nested-nav a .nav-icon {
+    max-width: 70px;
+    margin-top: -35px;
+}
+
 .nav-icon {
     max-width: 50px;
     margin-top: -30px;
     display: block;
-
 }
