@@ -17,12 +17,12 @@ export default function FarmAnimals({ farmData }: FarmAnimalProps) {
 
 
     return (
-        <section className="farm-section">
-            <h2>Your Farm Animals</h2>
+        <section className="farm-section" aria-labelledby="farm-animals-heading">
+            <h2 id="farm-animals-heading">Your Farm Animals</h2>
             <div className="farm-grid">
                 {animalGrid}
                 {Array.from({ length: 15 - farmData.length }).map((_, i) => (
-                    <div key={`empty-${i}`} className="farm-card empty-slot"></div>
+                    <div key={`empty-${i}`} className="farm-card empty-slot" aria-hidden="true"></div>
                 ))}
             </div>
 
