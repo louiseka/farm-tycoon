@@ -19,12 +19,12 @@ export default function FarmCrops({ farmData }: FarmCropsProps) {
 
 
     return (
-        <section className="farm-section">
-            <h2>Your Farm Crops</h2>
+        <section className="farm-section" aria-labelledby="farm-crops-heading">
+            <h2 id="farm-crops-heading">Your Farm Crops</h2>
             <div className="farm-grid">
                 {cropGrid}
                 {Array.from({ length: 15 - farmData.length }).map((_, i) => (
-                    <div key={`empty-${i}`} className="farm-card empty-slot"></div>
+                    <div key={`empty-${i}`} className="farm-card empty-slot" aria-hidden="true"></div>
                 ))}
             </div>
         </section>
