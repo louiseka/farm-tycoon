@@ -1,0 +1,21 @@
+.coins-ext-section {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2em 36em 1em 0;
+}
+
+.coins-inner-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    gap: 8px;
+    background-color: #F96F6F;
+    font-weight: 500;
+    border-radius: 5px;
+    font-size: 1.25em;
+}
+
+.coin-icon {
+    max-width: 50px;
+}
