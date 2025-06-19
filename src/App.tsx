@@ -31,7 +31,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout coins={coins} />}>
             <Route index element={<Dashboard />} />
             <Route path="shop" element={<ShopLayout />}>
               <Route index element={<Navigate to="crops" replace />} />

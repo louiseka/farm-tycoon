@@ -10,6 +10,7 @@ export default function Header() {
                 <NavLink to="/farm"><img className="nav-icon" src="../assets/Icons/farm-icon.svg" alt="A graphic of a farm barn." aria-hidden="true"></img>Farm</NavLink>
                 <NavLink to="/stats"><img className="nav-icon" src="../assets/Icons/lightbulb-icon.svg" alt="A graphic of a switched on light bulb." aria-hidden="true"></img>Stats</NavLink>
             </nav>
+
         </header>
     )
 }
