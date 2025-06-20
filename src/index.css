@@ -12,6 +12,9 @@ html {
 body {
     font-family: "Montserrat", sans-serif;
     background-color: #f5f5f5;
+    background-image: url("../public/assets/barn-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
 }
 
