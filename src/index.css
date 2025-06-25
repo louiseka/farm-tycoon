@@ -51,11 +51,9 @@ header {
     font-size: 1.25em;
     flex-direction: column;
     justify-content: space-between;
-
 }
 
-.main-nav a,
-.nested-nav a {
+.nav-unactive {
     color: #17141F;
     text-decoration: none;
     font-weight: 500;
@@ -81,4 +79,20 @@ header {
     max-width: 50px;
     margin-top: -30px;
     display: block;
+}
+
+.nav-active {
+    text-decoration: underline;
+    text-decoration-color: #17141F;
+    text-decoration-thickness: 3px;
+    line-height: 1.5;
+    color: #17141F;
+    font-weight: 500;
+    background-color: #ddd;
+    width: auto;
+    padding: 0.5em 1em 0.5em 0.5em;
+    border-radius: 5px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
 }
