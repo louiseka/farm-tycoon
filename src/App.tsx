@@ -27,6 +27,8 @@ function App() {
     return savedCoins !== null ? JSON.parse(savedCoins) : 5000
   })
 
+  const [weather, setWeather] = useState({})
+
   function buyShopItem(item: Crop | Animal) {
     setFarm(prevFarm => [...prevFarm, item])
     setCoins(prevCoins => prevCoins - item.sellPrice)
@@ -39,6 +41,13 @@ function App() {
   useEffect(() => {
     window.localStorage.setItem('saved-coins', JSON.stringify(coins))
   }, [coins])
+
+  useEffect(() => {
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat={50.817871}&lon={-0.372882}&appid={ae3f20b34c88d6e9ed3ae56051f9cd7f}')
+      .then(response => response.json())
+      .then(data => setWeather(data))
+      .catch(error => console.error("Error fetching weather data", error))
+  }, [])
 
 
 
