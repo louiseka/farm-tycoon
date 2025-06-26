@@ -1,5 +1,5 @@
 import { Routes, Route, BrowserRouter, Navigate } from "react-router"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import "./styles/sidenav.css"
 
@@ -18,13 +18,28 @@ import ShopCrops from "./pages/Shop/ShopCrops"
 
 function App() {
 
-  const [farm, setFarm] = useState<(Crop | Animal)[]>([])
-  const [coins, setCoins] = useState(5000)
+  const [farm, setFarm] = useState<(Crop | Animal)[]>(() => {
+    const savedFarm = window.localStorage.getItem('saved-farm')
+    return savedFarm !== null ? JSON.parse(savedFarm) : []
+  })
+  const [coins, setCoins] = useState<Coin>(() => {
+    const savedCoins = window.localStorage.getItem('saved-coins')
+    return savedCoins !== null ? JSON.parse(savedCoins) : 5000
+  })
 
   function buyShopItem(item: Crop | Animal) {
     setFarm(prevFarm => [...prevFarm, item])
     setCoins(prevCoins => prevCoins - item.sellPrice)
   }
+
+  useEffect(() => {
+    window.localStorage.setItem('saved-farm', JSON.stringify(farm))
+  }, [farm])
+
+  useEffect(() => {
+    window.localStorage.setItem('saved-coins', JSON.stringify(coins))
+  }, [coins])
+
 
 
   return (
