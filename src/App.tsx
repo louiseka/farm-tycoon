@@ -43,9 +43,9 @@ function App() {
   }, [coins])
 
   useEffect(() => {
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat={50.817871}&lon={-0.372882}&appid={ae3f20b34c88d6e9ed3ae56051f9cd7f}')
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=50.817871&lon=-0.372882&appid=38fdb4a7c5c6cdc11bf4139a539aeaac')
       .then(response => response.json())
-      .then(data => setWeather(data))
+      .then(data => console.log(data))
       .catch(error => console.error("Error fetching weather data", error))
   }, [])
 
