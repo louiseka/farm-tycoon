@@ -20,3 +20,5 @@ export type Animal = {
 export type Order = Crop | Animal
 
 export type Coin = number
+
+export type Weather = string
