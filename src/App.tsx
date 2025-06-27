@@ -27,7 +27,7 @@ function App() {
     return savedCoins !== null ? JSON.parse(savedCoins) : 5000
   })
 
-  const [weather, setWeather] = useState({})
+  const [weather, setWeather] = useState("")
 
   function buyShopItem(item: Crop | Animal) {
     setFarm(prevFarm => [...prevFarm, item])
@@ -45,7 +45,9 @@ function App() {
   useEffect(() => {
     fetch('https://api.openweathermap.org/data/2.5/weather?lat=50.817871&lon=-0.372882&appid=38fdb4a7c5c6cdc11bf4139a539aeaac')
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => {
+        setWeather(data.weather[0].main)
+      })
       .catch(error => console.error("Error fetching weather data", error))
   }, [])
 
@@ -56,7 +58,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout coins={coins} />}>
-            <Route index element={<Dashboard />} />
+            <Route index element={<Dashboard coins={coins} weather={weather} />} />
             <Route path="shop" element={<ShopLayout />}>
               <Route index element={<Navigate to="crops" replace />} />
               <Route path="crops" element={<ShopCrops buyShopItem={buyShopItem} />} />

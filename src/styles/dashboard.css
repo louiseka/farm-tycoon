@@ -1,0 +1,44 @@
+.dashboard-section {
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: row;
+    max-width: 1380px;
+    margin: 0 auto;
+    border-radius: 8px;
+    position: relative;
+
+}
+
+.main-img {
+    max-width: 800px;
+    position: relative;
+    z-index: 10;
+}
+
+.md-icon {
+    max-width: 80px;
+    padding-right: 0.5em;
+}
+
+.dashboard-message {
+    text-align: left;
+    padding: 5em 0;
+    margin-left: -60px;
+}
+
+.dashboard-list {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0.5em;
+}
+
+.dashboard-heading {
+    font-size: 2.1rem;
+}
+
+ul {
+    padding-inline-start: 0;
+    margin: 0;
+    list-style-type: none;
+}

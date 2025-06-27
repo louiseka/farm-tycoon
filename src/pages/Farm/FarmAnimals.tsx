@@ -7,7 +7,6 @@ type FarmAnimalProps = {
 
 export default function FarmAnimals({ farmData }: FarmAnimalProps) {
 
-    console.log(farmData)
     const animalGrid = farmData.map((animal) => (
         <div key={animal.id} className="farm-card">
             <h3>{animal.name}</h3>
