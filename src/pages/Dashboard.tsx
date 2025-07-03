@@ -17,6 +17,8 @@ export default function Dashboard({ coins, weather }: dashboardProps) {
     }
     const formattedDate = date.toLocaleDateString('en-GB', options)
 
+
+
     return (
         <section className="dashboard-section">
             <div>
@@ -25,9 +27,9 @@ export default function Dashboard({ coins, weather }: dashboardProps) {
             <div className="dashboard-message">
                 <h2 className="dashboard-heading"> Hi there! Here is today's update:</h2>
                 <ul>
-                    <li className="dashboard-list"><img className="md-icon" src="./assets/Icons/calendar.svg"></img>{formattedDate}</li>
+                    <li className="dashboard-list"><img className="md-icon" src="./assets/Icons/calendar.svg"></img>Today is {formattedDate}</li>
                     <li className="dashboard-list"><img className="md-icon" src="./assets/Icons/coins.svg"></img>You have {coins} gold</li>
-                    <li className="dashboard-list"> <img className="md-icon" src="./assets/Icons/cloud.svg"></img>{weather}</li>
+                    <li className="dashboard-list"> <img className="md-icon" src="./assets/Icons/cloud.svg"></img>Its's {weather.toLowerCase()} today</li>
 
                 </ul>
             </div>
