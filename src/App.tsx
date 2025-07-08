@@ -16,6 +16,8 @@ import ShopLayout from "./components/ShopLayout"
 import ShopAnimals from "./pages/Shop/ShopAnimals"
 import ShopCrops from "./pages/Shop/ShopCrops"
 
+const apiKey = import.meta.env.VITE_WEATHER_API_KEY
+
 function App() {
 
   const [farm, setFarm] = useState<(Crop | Animal)[]>(() => {
@@ -45,7 +47,7 @@ function App() {
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=50.817871&lon=-0.372882&appid=38fdb4a7c5c6cdc11bf4139a539aeaac')
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=50.817871&lon=-0.372882&appid=${apiKey}`)
         const data = await response.json()
         setWeather(data.weather[0].main)
       } catch (error: unknown) {
