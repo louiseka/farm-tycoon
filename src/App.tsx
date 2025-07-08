@@ -27,7 +27,7 @@ function App() {
     return savedCoins !== null ? JSON.parse(savedCoins) : 5000
   })
 
-  const [weather, setWeather] = useState("")
+  const [weather, setWeather] = useState<string>("")
 
   function buyShopItem(item: Crop | Animal) {
     setFarm(prevFarm => [...prevFarm, item])
@@ -43,37 +43,38 @@ function App() {
   }, [coins])
 
   useEffect(() => {
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat=50.817871&lon=-0.372882&appid=38fdb4a7c5c6cdc11bf4139a539aeaac')
-      .then(response => response.json())
-      .then(data => {
+    const fetchWeather = async () => {
+      try {
+        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=50.817871&lon=-0.372882&appid=38fdb4a7c5c6cdc11bf4139a539aeaac')
+        const data = await response.json()
         setWeather(data.weather[0].main)
-      })
-      .catch(error => console.error("Error fetching weather data", error))
+      } catch (error: unknown) {
+        console.error("Error fetching weather data", error)
+      }
+    }
+    fetchWeather()
   }, [])
 
 
-
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout coins={coins} />}>
-            <Route index element={<Dashboard coins={coins} weather={weather} />} />
-            <Route path="shop" element={<ShopLayout />}>
-              <Route index element={<Navigate to="crops" replace />} />
-              <Route path="crops" element={<ShopCrops buyShopItem={buyShopItem} />} />
-              <Route path="animals" element={<ShopAnimals buyShopItem={buyShopItem} />} />
-            </Route>
-            <Route path="farm" element={<FarmLayout />}>
-              <Route index element={<Navigate to="crops" replace />} />
-              <Route path="crops" element={<FarmCrops farmData={farm.filter(isCrop)} />} />
-              <Route path="animals" element={<FarmAnimals farmData={farm.filter(isAnimal)} />} />
-            </Route>
-            <Route path="stats" element={<Stats />} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout coins={coins} />}>
+          <Route index element={<Dashboard coins={coins} weather={weather} />} />
+          <Route path="shop" element={<ShopLayout />}>
+            <Route index element={<Navigate to="crops" replace />} />
+            <Route path="crops" element={<ShopCrops buyShopItem={buyShopItem} />} />
+            <Route path="animals" element={<ShopAnimals buyShopItem={buyShopItem} />} />
           </Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+          <Route path="farm" element={<FarmLayout />}>
+            <Route index element={<Navigate to="crops" replace />} />
+            <Route path="crops" element={<FarmCrops farmData={farm.filter(isCrop)} />} />
+            <Route path="animals" element={<FarmAnimals farmData={farm.filter(isAnimal)} />} />
+          </Route>
+          <Route path="stats" element={<Stats />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
