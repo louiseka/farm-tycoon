@@ -1,7 +1,7 @@
-import type { Animal } from "../types/farmTypes"
+import type { RawAnimal } from "../types/farmTypes"
 
-export const animalData: Animal[] = [{
-    id: 1,
+
+export const rawAnimalData: RawAnimal[] = [{
     name: "Chicken",
     buyPrice: 100,
     sellPrice: 200,
@@ -10,7 +10,6 @@ export const animalData: Animal[] = [{
     produce: "Eggs"
 },
 {
-    id: 2,
     name: "Cow",
     buyPrice: 500,
     sellPrice: 1000,
@@ -19,7 +18,6 @@ export const animalData: Animal[] = [{
     produce: "Milk"
 },
 {
-    id: 3,
     name: "Sheep",
     buyPrice: 400,
     sellPrice: 800,
@@ -28,7 +26,6 @@ export const animalData: Animal[] = [{
     produce: "Wool"
 },
 {
-    id: 4,
     name: "Pig",
     buyPrice: 300,
     sellPrice: 600,

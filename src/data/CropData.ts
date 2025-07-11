@@ -1,7 +1,6 @@
-import type { Crop } from "../types/farmTypes"
+import type { RawCrop } from "../types/farmTypes"
 
-export const cropData: Crop[] = [{
-    id: 5,
+export const rawCropData: RawCrop[] = [{
     name: "Wheat",
     buyPrice: 20,
     sellPrice: 50,
@@ -9,7 +8,6 @@ export const cropData: Crop[] = [{
     alt: "A graphic of wheat."
 },
 {
-    id: 6,
     name: "Sweetcorn",
     buyPrice: 35,
     sellPrice: 85,
@@ -17,7 +15,6 @@ export const cropData: Crop[] = [{
     alt: "A graphic of a sweetcorn."
 },
 {
-    id: 7,
     name: "Strawberry",
     buyPrice: 60,
     sellPrice: 150,
@@ -25,7 +22,6 @@ export const cropData: Crop[] = [{
     alt: "A graphic of a strawberry."
 },
 {
-    id: 8,
     name: "Potato",
     buyPrice: 30,
     sellPrice: 70,
@@ -33,7 +29,6 @@ export const cropData: Crop[] = [{
     alt: "A graphic of a potato."
 },
 {
-    id: 9,
     name: "Tomato",
     buyPrice: 40,
     sellPrice: 90,
@@ -41,7 +36,6 @@ export const cropData: Crop[] = [{
     alt: "A graphic of a red tomato."
 },
 {
-    id: 10,
     name: "Apple",
     buyPrice: 50,
     sellPrice: 120,
@@ -49,7 +43,6 @@ export const cropData: Crop[] = [{
     alt: "A graphic of a red apple."
 },
 {
-    id: 11,
     name: "Carrot",
     buyPrice: 25,
     sellPrice: 60,
