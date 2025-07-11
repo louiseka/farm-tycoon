@@ -1,4 +1,4 @@
-import "/src/styles/shop.css"
+import "./src/styles/shop.css"
 import { cropData } from "../../data/CropData"
 import type { Crop } from "../../types/farmTypes"
 
