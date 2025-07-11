@@ -1,5 +1,5 @@
 export type Crop = {
-    id: number,
+    id: string,
     name: string,
     buyPrice: number,
     sellPrice: number,
@@ -8,7 +8,7 @@ export type Crop = {
 }
 
 export type Animal = {
-    id: number,
+    id: string,
     name: string,
     buyPrice: number,
     sellPrice: number,
@@ -16,6 +16,10 @@ export type Animal = {
     alt: string,
     produce: string
 }
+
+export type RawCrop = Omit<Crop, 'id'>
+
+export type RawAnimal = Omit<Animal, 'id'>
 
 export type Order = Crop | Animal
 

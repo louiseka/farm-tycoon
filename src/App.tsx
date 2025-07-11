@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 
 import "./styles/sidenav.css"
 
-import type { Coin, Order, Crop, Animal } from "./types/farmTypes"
+import type { Coin, Order, Crop, Animal, RawCrop, RawAnimal } from "./types/farmTypes"
 import { isAnimal, isCrop } from "./utils/typeGuard"
 
 import Dashboard from "./pages/Dashboard"
@@ -15,6 +15,7 @@ import FarmLayout from "./components/FarmLayout"
 import ShopLayout from "./components/ShopLayout"
 import ShopAnimals from "./pages/Shop/ShopAnimals"
 import ShopCrops from "./pages/Shop/ShopCrops"
+import { nanoid } from "nanoid"
 
 const apiKey = import.meta.env.VITE_WEATHER_API_KEY
 
@@ -31,8 +32,8 @@ function App() {
 
   const [weather, setWeather] = useState<string>("")
 
-  function buyShopItem(item: Crop | Animal) {
-    setFarm(prevFarm => [...prevFarm, item])
+  function buyShopItem(item: RawCrop | RawAnimal) {
+    setFarm(prevFarm => [...prevFarm, {...item, id: nanoid()}])
     setCoins(prevCoins => prevCoins - item.sellPrice)
   }
 
