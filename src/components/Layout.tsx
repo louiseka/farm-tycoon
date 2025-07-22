@@ -23,7 +23,7 @@ export default function Layout({ coins }: coinProps) {
             <div className="coins-ext-section">
                 <div className="coins-inner-section">
                     <img className="coin-icon" src="../assets/Icons/coins.svg"></img>
-                    <p>£{coins} gold</p>
+                    <p>{coins} gold</p>
                 </div>
             </div>
             <div className="side-nav">

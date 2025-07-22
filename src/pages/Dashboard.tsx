@@ -29,7 +29,7 @@ export default function Dashboard({ coins, weather }: dashboardProps) {
                 <ul>
                     <li className="dashboard-list"><img className="md-icon" src="./assets/Icons/calendar.svg"></img>Today is {formattedDate}</li>
                     <li className="dashboard-list"><img className="md-icon" src="./assets/Icons/coins.svg"></img>You have {coins} gold</li>
-                    <li className="dashboard-list"> <img className="md-icon" src="./assets/Icons/cloud.svg"></img>Its's {weather.toLowerCase()} today</li>
+                    <li className="dashboard-list"> <img className="md-icon" src="./assets/Icons/cloud.svg"></img>It's {weather.toLowerCase()} today</li>
 
                 </ul>
             </div>
