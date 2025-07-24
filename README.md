@@ -10,3 +10,7 @@ I’m currently building a Farm Tycoon game using TypeScript and React. The firs
 - Purchased animals produce goods after a set number of days.
 - Crops grow over time and are ready to harvest after a set number of days.
 - A profit and expenses summary available in the statistics tab.
+
+## License
+
+This project is licensed under a proprietary license. All rights reserved. You may not copy, modify, distribute, or use any part of this code without explicit written permission from the author.
